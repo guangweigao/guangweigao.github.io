@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>CVPRW_ESRT</title>
+<title>AAAI_FDIWN</title>
 
 <style media="screen" type="text/css">
 body
@@ -42,30 +42,32 @@ var _hmt = _hmt || [];
 </head>
 
 <body>
-<h3 align="center"><i><font size="3" face="Palatino Linotype">The Conference on Computer Vision and Pattern Recognition Workshop (NTIRE) 2022</font></i></h3>
+<h3 align="center"><i><font size="3" face="Palatino Linotype">36th AAAI Conference on Artificial Intelligence (AAAI) 2022</font></i></h3>
 
 <table align="center">
 <td align="center">
-<h1>Transformer for Single Image Super-Resolution</h1>
+<h1>Feature Distillation Interaction Weighting Network for Lightweight Image Super-Resolution</h1>
 <h3>
-	<font size="3"><b>Zhisheng Lu</b></font></a><sup><font size="2">1#</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
-	<a href="https://junchenglee.com/" target="_blank"><font size="3"><b>Juncheng Li</b></font></a><sup><font size="2">2#</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
-	<font size="3">Hong Liu</font><sup><font size="2">1*</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
-	<font size="3">Chaoyan Huang</font><sup><font size="2">3</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
-	<font size="3">Linlin Zhang</font><sup><font size="2">1</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
-	<font size="3">Tieyong Zeng</font><sup><font size="2">2</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="https://guangweigao.github.io/" target="_blank"><font size="3"><b>Guangwei Gao</b></font></a><sup><font size="2">1†</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
+	<font size="3"><b>Wenjie Li</b></font></a><sup><font size="2">1†</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="https://junchenglee.com/" target="_blank"><font size="3"><b>Juncheng Li</b></font></a><sup><font size="2">2*</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
+	<font size="3">Fei Wu</font><sup><font size="2">1</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
+	<font size="3">Huimin Lu</font><sup><font size="2">3</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
+	<font size="3">Yi Yu</font><sup><font size="2">4</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
 </h3>
 
 <sup><font size="2">1</font></sup>
-<b><a><font size="3">Peking University Shenzhen Graduate School</font></a></b>&nbsp;&nbsp;&nbsp;&nbsp;
-<sup><font size="2">2</font></sup>
-<b><a><font size="3">The Chinese University of Hong Kong</font></a></b>&nbsp;&nbsp;&nbsp;&nbsp;
-<sup><font size="2">3</font></sup>
 <b><a><font size="3">Nanjing University of Posts and Telecommunications</font></a></b>&nbsp;&nbsp;&nbsp;&nbsp;
+<sup><font size="2">2</font></sup>
+<b><a><font size="3">The Chinese University of Hong Kong</font></a></b>&nbsp;&nbsp;&nbsp;&nbsp; <br>
+<sup><font size="2">3</font></sup>
+<b><a><font size="3">Kyushu Institute of Technology</font></a></b>&nbsp;&nbsp;&nbsp;&nbsp;
+<sup><font size="2">4</font></sup>
+<b><a><font size="3">National Institute of Informatics</font></a></b>&nbsp;&nbsp;&nbsp;&nbsp;
 
 <br>
 <br>&nbsp;
-	<b><a><font size="3"> #Co-ﬁrst authors, *Corresponding author &nbsp;&nbsp;&nbsp;&nbsp; Contact us: cvjunchengli@gmail.con; zhisheng_lu@pku.edu.cn</font></a></b>
+	<b><a><font size="3"> †Co-ﬁrst authors, *Corresponding author &nbsp;&nbsp;&nbsp;&nbsp; Contact: {csggao,cvjunchengli}@gmail.com, liwj0824@163.com</font></a></b>
 <br>
 
 </td>
@@ -83,10 +85,11 @@ var _hmt = _hmt || [];
 <br>
 <h2><p><font size="6"><b>Abstract</b></font></p></h2>
 <hr/>
-<p><font size="4" face="Palatino Linotype">Single image super-resolution (SISR) has witnessed great strides with the development of deep learning. However, most existing studies focus on building more complex networks with a massive number of layers. Recently, more and more researchers start to explore the application of Transformer in computer vision tasks. However, the heavy computational cost and high GPU memory occupation of the vision Transformer cannot be ignored. In this paper, we propose a novel Efﬁcient Super-Resolution Transformer (ESRT) for SISR. ESRT is a hybrid model, which consists of a Lightweight CNN Backbone (LCB) and a Lightweight Transformer Backbone (LTB). Among them, LCB can dynamically adjust the size of the feature map to extract deep features with a low computational costs. LTB is composed of a series of Efﬁcient Transformers (ET), which occupies a small GPU memory occupation, thanks to the specially designed Efﬁcient Multi-Head Attention (EMHA). Extensive experiments show that ESRT achieves competitive results with low computational cost. Compared with the original Transformer which occupies 16,057M GPU memory, ESRT only occupies 4,191M GPU memory.
+<p><font size="4" face="Palatino Linotype">Convolutional neural networks based single-image super-resolution (SISR) has made great progress in recent years. However, it is difficult to apply these methods to real-world scenarios due to the computational and memory cost. Meanwhile, how to take full advantage of the intermediate features under the constraints of limited parameters and calculations is also a huge challenge. To alleviate these issues, we propose a lightweight yet efficient Feature Distillation Interaction Weighted Network (FDIWN). Specifically, FDIWN utilizes a series of specially designed Feature Shuffle Weighted Groups (FSWG) as the backbone, and several novel mutual Wide-residual Distillation Interaction Blocks (WDIB) form an FSWG. In addition, Wide Identical Residual Weighting (WIRW) units and Wide Convolutional Residual Weighting (WCRW) units are introduced into WDIB for better feature distillation. Moreover, a Wide-Residual Distillation Connection (WRDC) framework and a Self-Calibration Fusion (SCF) unit are proposed to interact features with different scales more flexibly and efficiently.
+Extensive experiments show that our FDIWN is superior to other models to strike a good balance between model performance and efficiency. The code is available at https://github.com/IVIPLab/FDIWN.
 </font></p>
 
-
+<!--
 <br>
 <h2><p><font size="6"><b>Motivation</b></font></p></h2>
 <hr/>
@@ -101,18 +104,17 @@ var _hmt = _hmt || [];
 <tr>
 <td align="center">Examples of similar patches in images. These similar patches can help restore details from each other.</td>
 </tr>
-</table>
-
+</table>-->
 
 <br>
-<h2><p><font size="6"><b>ESRT</b></font></p></h2>
+<h2><p><font size="6"><b>FDIWN</b></font></p></h2>
 <table align="center">
 <hr/>
 <tr>
-	<td align="center"><img border=0 width=900 src="ESRT.png"></td>
+	<td align="center"><img border=0 width=900 src="FDIWN.png"></td>
 </tr>
 <tr>
-	<td align="center">The architecture of the proposed Efﬁcient Super-Resolution Transformer.</td>
+	<td align="center">The architecture of the proposed Feature Distillation Interaction Weighting Network (FDIWN).</td>
 </tr>
 </table>
 
@@ -120,21 +122,10 @@ var _hmt = _hmt || [];
 <table align="center">
 <hr/>
 <tr>
-	<td align="center"><img border=0 width=900 src="processing.png"></td>
+	<td align="center"><img border=0 width=900 src="WDIB.png"></td>
 </tr>
 <tr>
-	<td align="center">The complete pre- and post-processing for the Efﬁcient Transformer (ET).</td>
-</tr>
-</table>
-
-
-<table align="center">
-<hr/>
-<tr>
-	<td align="center"><img border=0 width=700 src="EMHA.png"></td>
-</tr>
-<tr>
-	<td align="center">Architecture of Efﬁcient Transformer. EMHA is the Efﬁcient Multi-Head Attention. MatMul is the matrix multiplication.</td>
+	<td align="center">The structure of the proposed Wide-residual Distillation Interaction Block (WDIB). Conv1 and Conv3 represent the convolutional layer with the kernel size of 1 and 3, respectively.</td>
 </tr>
 </table>
 
@@ -146,7 +137,7 @@ var _hmt = _hmt || [];
 <hr/>
 <table align="center">
 <tr>
-	<td align="center"><img border=0 width=900 src="Result2.png"></td>
+	<td align="center"><img border=0 width=900 src="koutu.png"></td>
 </tr>
 </table>
 
@@ -158,12 +149,12 @@ var _hmt = _hmt || [];
 <hr/>
 <table align="center">
 <tr>
-	<td align="center"><img border=0 width=900 src="Result1.png"></td>
+	<td align="center"><img border=0 width=900 src="PSNR_SSIM.png"></td>
 </tr>
 </table>
 
 
-
+<!--
 <br>
 <h2><p><font size="6"><b>Downloads</b></font></p></h2>
 <hr/>
@@ -215,16 +206,16 @@ var _hmt = _hmt || [];
 <font size="3">
 The original title of this paper was "Efficient Transformer for Single Image Super-Resolution". </br>
 The final version of this paper is "Transformer for Single Image Super-Resolution". 
-</font>
+</font>-->
 
 
 <h2><p><font size="6" color="black"><b>BibTex</b></font></p></h2>
 <hr/>
 <font size="3">
-@InProceedings{fang2020multi,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;title = {Transformer for Single Image Super-Resolution},<br>
-&nbsp;&nbsp;&nbsp;&nbsp;author = {Lu Zhisheng, Li Juncheng, Liu Hong, Huang Chaoyan, Zhang Linlin, and Zeng Tieyong},<br>
-&nbsp;&nbsp;&nbsp;&nbsp;booktitle = {ICVPRW},<br>
+@InProceedings{gao2021feature,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;title = {Feature Distillation Interaction Weighting Network for Lightweight Image Super-Resolution},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;author = {Gao, Guangwei and Li, Wenjie and Li, Juncheng and Wu, Fei and Lu, Huimin and Yu, Yi},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;booktitle = {AAAI},<br>
 &nbsp;&nbsp;&nbsp;&nbsp;year = {2022},<br>
 }
 </font>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>CVPRW_ESRT</title>
+<title>TMM22_FBSNet</title>
 
 <style media="screen" type="text/css">
 body
@@ -42,30 +42,35 @@ var _hmt = _hmt || [];
 </head>
 
 <body>
-<h3 align="center"><i><font size="3" face="Palatino Linotype">The Conference on Computer Vision and Pattern Recognition Workshop (NTIRE) 2022</font></i></h3>
+<h3 align="center"><i><font size="3" face="Palatino Linotype">IEEE Transactions on Multimedia (TMM) 2022</font></i></h3>
 
 <table align="center">
 <td align="center">
-<h1>Transformer for Single Image Super-Resolution</h1>
+<h1>FBSNet: A Fast Bilateral Symmetrical Network for Real-Time Semantic Segmentation</h1>
 <h3>
-	<font size="3"><b>Zhisheng Lu</b></font></a><sup><font size="2">1#</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
-	<a href="https://junchenglee.com/" target="_blank"><font size="3"><b>Juncheng Li</b></font></a><sup><font size="2">2#</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
-	<font size="3">Hong Liu</font><sup><font size="2">1*</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
-	<font size="3">Chaoyan Huang</font><sup><font size="2">3</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
-	<font size="3">Linlin Zhang</font><sup><font size="2">1</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
-	<font size="3">Tieyong Zeng</font><sup><font size="2">2</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="https://guangweigao.github.io/" target="_blank"><font size="3"><b>Guangwei Gao</b></font></a><sup><font size="3">1†</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
+	<font size="3"><b>Guoan Xu</b></font></a><sup><font size="3">1†</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="https://junchenglee.com/" target="_blank"><font size="3"><b>Juncheng Li</b></font></a><sup><font size="3">2*</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
+	<font size="3">Yi Yu</font><sup><font size="3">3*</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
+	<font size="3">Huimin Lu</font><sup><font size="3">4</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="http://www.patternrecognition.asia/jian/" target="_blank"><font size="3">Jian Yang</font><sup><font size="3">5</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
 </h3>
 
 <sup><font size="2">1</font></sup>
-<b><a><font size="3">Peking University Shenzhen Graduate School</font></a></b>&nbsp;&nbsp;&nbsp;&nbsp;
-<sup><font size="2">2</font></sup>
-<b><a><font size="3">The Chinese University of Hong Kong</font></a></b>&nbsp;&nbsp;&nbsp;&nbsp;
-<sup><font size="2">3</font></sup>
 <b><a><font size="3">Nanjing University of Posts and Telecommunications</font></a></b>&nbsp;&nbsp;&nbsp;&nbsp;
+<sup><font size="2">2</font></sup>
+<b><a><font size="3">The Chinese University of Hong Kong</font></a></b>&nbsp;&nbsp;&nbsp;&nbsp; <br>
+<sup><font size="2">3</font></sup>
+<b><a><font size="3">National Institute of Informatics</font></a></b>&nbsp;&nbsp;&nbsp;&nbsp;
+<sup><font size="2">4</font></sup>
+<b><a><font size="3">Kyushu Institute of Technology</font></a></b>&nbsp;&nbsp;&nbsp;&nbsp;
+<sup><font size="2">4</font></sup>
+<b><a><font size="3">Nanjing University of Science and Technology</font></a></b>&nbsp;&nbsp;&nbsp;&nbsp;
+
 
 <br>
 <br>&nbsp;
-	<b><a><font size="3"> #Co-ﬁrst authors, *Corresponding author &nbsp;&nbsp;&nbsp;&nbsp; Contact us: cvjunchengli@gmail.con; zhisheng_lu@pku.edu.cn</font></a></b>
+	<b><a><font size="3"> †Co-ﬁrst authors, *Corresponding author &nbsp;&nbsp;&nbsp;&nbsp; Contact us: {csggao,cvjunchengli}@gmail.com, xga_njupt@163.com</font></a></b>
 <br>
 
 </td>
@@ -75,7 +80,7 @@ var _hmt = _hmt || [];
 <br><br>
 <table align="center">
 <tr>
-	<td align="center"><embed src="head.png" width="600"></td>
+	<td align="center"><embed src="FBSNet-Tradeoff.png" width="600"></td>
 </tr>
 </table>
 
@@ -83,10 +88,13 @@ var _hmt = _hmt || [];
 <br>
 <h2><p><font size="6"><b>Abstract</b></font></p></h2>
 <hr/>
-<p><font size="4" face="Palatino Linotype">Single image super-resolution (SISR) has witnessed great strides with the development of deep learning. However, most existing studies focus on building more complex networks with a massive number of layers. Recently, more and more researchers start to explore the application of Transformer in computer vision tasks. However, the heavy computational cost and high GPU memory occupation of the vision Transformer cannot be ignored. In this paper, we propose a novel Efﬁcient Super-Resolution Transformer (ESRT) for SISR. ESRT is a hybrid model, which consists of a Lightweight CNN Backbone (LCB) and a Lightweight Transformer Backbone (LTB). Among them, LCB can dynamically adjust the size of the feature map to extract deep features with a low computational costs. LTB is composed of a series of Efﬁcient Transformers (ET), which occupies a small GPU memory occupation, thanks to the specially designed Efﬁcient Multi-Head Attention (EMHA). Extensive experiments show that ESRT achieves competitive results with low computational cost. Compared with the original Transformer which occupies 16,057M GPU memory, ESRT only occupies 4,191M GPU memory.
+<p><font size="4" face="Palatino Linotype">Real-time semantic segmentation, which can be visually understood as the pixel-level classification task on the input image, currently has broad application prospects, especially in the fast-developing fields of autonomous driving and drone navigation. However, the huge burden of calculation together with redundant parameters are still the obstacles to its technological development. 
+	In this paper, we propose a Fast Bilateral Symmetrical Network (FBSNet) to alleviate the above challenges. Specifically, FBSNet employs a symmetrical encoder-decoder structure with two branches, semantic information branch and spatial detail branch. The Semantic Information Branch (SIB) is the main branch with semantic architecture to acquire the contextual information of the input image and meanwhile acquire sufficient receptive field. 
+	While the Spatial Detail Branch (SDB) is a shallow and simple network used to establish local dependencies of each pixel for preserving details, which is essential for restoring the original resolution during the decoding phase. Meanwhile, a Feature Aggregation Module (FAM) is designed to effectively combine the output of these two branches. Experimental results of Cityscapes and CamVid show that the proposed FBSNet can strike a good balance between accuracy and efficiency. 
+	Specifically, it obtains 70.9\% and 68.9\% mIoU along with the inference speed of 90 fps and 120 fps on these two test datasets, respectively, with only 0.62 million parameters on a single RTX 2080Ti GPU. The code is available at https://github.com/IVIPLab/FBSNet.
 </font></p>
 
-
+<!--
 <br>
 <h2><p><font size="6"><b>Motivation</b></font></p></h2>
 <hr/>
@@ -101,52 +109,42 @@ var _hmt = _hmt || [];
 <tr>
 <td align="center">Examples of similar patches in images. These similar patches can help restore details from each other.</td>
 </tr>
-</table>
-
-
-<br>
-<h2><p><font size="6"><b>ESRT</b></font></p></h2>
-<table align="center">
-<hr/>
-<tr>
-	<td align="center"><img border=0 width=900 src="ESRT.png"></td>
-</tr>
-<tr>
-	<td align="center">The architecture of the proposed Efﬁcient Super-Resolution Transformer.</td>
-</tr>
-</table>
-
-
-<table align="center">
-<hr/>
-<tr>
-	<td align="center"><img border=0 width=900 src="processing.png"></td>
-</tr>
-<tr>
-	<td align="center">The complete pre- and post-processing for the Efﬁcient Transformer (ET).</td>
-</tr>
-</table>
-
-
-<table align="center">
-<hr/>
-<tr>
-	<td align="center"><img border=0 width=700 src="EMHA.png"></td>
-</tr>
-<tr>
-	<td align="center">Architecture of Efﬁcient Transformer. EMHA is the Efﬁcient Multi-Head Attention. MatMul is the matrix multiplication.</td>
-</tr>
-</table>
-
-
-
+</table>-->
 
 <br>
-<h2><p><font size="6"><b>Visual Results</b></font></p></h2>
-<hr/>
+<h2><p><font size="6"><b>FBSNet</b></font></p></h2>
 <table align="center">
+<hr/>
 <tr>
-	<td align="center"><img border=0 width=900 src="Result2.png"></td>
+	<td align="center"><img border=0 width=900 src="FBSNet-Network.png"></td>
+</tr>
+<br>	
+<tr>
+	<td align="center">The complete architecture of our proposed Fast Bilateral Symmetrical Network (FBSNet).</td>
+</tr>
+</table>
+
+
+<table align="center">
+<hr/>
+<tr>
+	<td align="center"><img border=0 width=900 src="FBSNet-module.png"></td>
+</tr>
+<br>
+<tr>
+	<td align="center">Comparison of different residual modules. (a) SS-nbt module in LEDNet, (b) EAR module in MSCFNet, (c) Pyramid cascade module in ESPNet, and (d) is our proposed Bottleneck Residual Unit (BRU).</td>
+</tr>
+</table>
+
+
+<table align="center">
+<hr/>
+<tr>
+	<td align="center"><img border=0 width=900 src="FBSNet-architectural.png"></td>
+</tr>
+<br>
+<tr>
+	<td align="center">Detailed architectural configuration of Fast Bilateral Symmetrical Network (FBSNet).</td>
 </tr>
 </table>
 
@@ -154,13 +152,34 @@ var _hmt = _hmt || [];
 
 
 <br>
-<h2><p><font size="6"><b>PSNR/SSIM Results</b></font></p></h2>
+<h2><p><font size="6"><b>Segmentation Results</b></font></p></h2>
+
+<table align="center">
+<hr/>
+<tr>
+	<td align="center"><img border=0 width=900 src="FBSNet-cityscapes-visual.png"></td>
+</tr>
+<br>
+<tr>
+	<td align="center">Sample visual results on the Cityscapes validation set. From left to right: input samples, ground-truth references, segmentation outputs of the proposed FBSNet, LEDNet, DABNet, ERFNet, NDNet, and ENet. 
+		The region in the yellow dotted box can intuitively highlight the superiority of our method over others.</td>
+</tr>
+</table>
+
+
 <hr/>
 <table align="center">
 <tr>
-	<td align="center"><img border=0 width=900 src="Result1.png"></td>
+	<td align="center"><img border=0 width=900 src="FBSNet-cityscapes-table.png"></td>
+</tr>
+	<br>
+<tr>
+	<td align="center">Comparison with state-of-the-arts image semantic segmentation methods on the Cityscapes test dataset. Although our FBSNet did not achieve the best results on mIoU, the model achieves competitive results on the number of parameters, 
+		FLOPs, and FPS. In general, FSBNet achieves the best balance between model performance, model size, and inference time.</td>
 </tr>
 </table>
+
+
 
 
 
@@ -174,34 +193,17 @@ var _hmt = _hmt || [];
 			<font size="4">Paper</font>
 		</td>
 		<td>
-			<font size="4">: <a href="https://arxiv.org/pdf/2108.11084.pdf" target="_blank">[ Paper ]</a></font>
+			<font size="4">: <a href="https://ieeexplore.ieee.org/document/9732215" target="_blank">[ Paper ]</a></font>
 		</td>
 		</tr>
 			
-       <tr align="left">
-		<td>
-			<font size="4">Supp Material</font>
-		</td>
-		<td>
-			<font size="4">: <a href="https://junchenglee.com/paper/ESRT-supp.pdf" target="_blank">[ Supplementary Material ]</a></font>
-		</td>
-	    </tr>
 					
 		<tr align="left">
 		<td>
 			<font size="4">Source Code</font>
 		</td>
 		<td>
-			<font size="4">: <a href="https://github.com/luissen/ESRT" target="_blank">[ Code ]</a> </font>
-		</td>
-		</tr>	
-
-		<tr align="left">
-		<td>
-			<font size="4">ESRT Result</font>
-		</td>
-		<td>
-			<font size="4">: <a href="https://www.jianguoyun.com/p/DZv442AQ19ySBxjcsbsEIAA" target="_blank">[ Reconstruction Results ]</a> </font>
+			<font size="4">: <a href="https://github.com/IVIPLab/FBSNet" target="_blank">[ Code ]</a> </font>
 		</td>
 		</tr>	
 			
@@ -209,23 +211,23 @@ var _hmt = _hmt || [];
 		</table>
 </div>
 
-
+<!--
 <h2><p><font size="6" color="black"><b>Statement</b></font></p></h2>
 <hr/>
 <font size="3">
 The original title of this paper was "Efficient Transformer for Single Image Super-Resolution". </br>
 The final version of this paper is "Transformer for Single Image Super-Resolution". 
-</font>
+</font>-->
 
 
 <h2><p><font size="6" color="black"><b>BibTex</b></font></p></h2>
 <hr/>
 <font size="3">
-@InProceedings{fang2020multi,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;title = {Transformer for Single Image Super-Resolution},<br>
-&nbsp;&nbsp;&nbsp;&nbsp;author = {Lu Zhisheng, Li Juncheng, Liu Hong, Huang Chaoyan, Zhang Linlin, and Zeng Tieyong},<br>
-&nbsp;&nbsp;&nbsp;&nbsp;booktitle = {ICVPRW},<br>
-&nbsp;&nbsp;&nbsp;&nbsp;year = {2022},<br>
+@InProceedings{gao2022fbsnet,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;title = {FBSNet: A fast bilateral symmetrical network for real-time semantic segmentation},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;author = {Gao, Guangwei and Xu, Guoan and Li, Juncheng and Yu, Yi and Lu, Huimin and Yang, Jian},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;booktitle = {IEEE Transactions on Multimedia},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;year = {2022}<br>
 }
 </font>
 
